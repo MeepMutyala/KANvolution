@@ -28,6 +28,7 @@ int main() {
         int width = frame.cols;
         int height = frame.rows;
 
+        // allocating memory for frame loading, and for computed products
         std::vector<unsigned char> inputFrame(width * height * 3);
         std::vector<unsigned char> outputBuffer(width * height * 3);
 
@@ -42,18 +43,23 @@ int main() {
             }
         }
 
+        // display a window with the camera frame data
         cv::imshow("Webcam", frame);
 
+        //convolve with the blur kernel
         convolver.convolve(inputFrame.data(), outputBuffer.data(), width, height, blurKernel, NULL, 1, 1);
         cv::Mat blurredFrame(height, width, CV_8UC3, outputBuffer.data());
         cv::imshow("Blurred Convolution", blurredFrame);
 
+        // convert to b&w for edge detection
         cv::cvtColor(frame, frame, cv::COLOR_BGR2GRAY);
 
+        // convolve with both gradient filters to produce outlines
         convolver.convolve(inputFrame.data(), outputBuffer.data(), width, height, sobelKernelX, sobelKernelY, 2, 1);
         cv::Mat outlinesFrame(height, width, CV_8UC3, outputBuffer.data());
         cv::imshow("Edge Convolution", outlinesFrame);
 
+        // to break
         if (cv::waitKey(1) >= 0) break;
     }
 

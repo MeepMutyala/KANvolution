@@ -60,7 +60,7 @@ void mcuConv::convolve(const unsigned char* input, unsigned char* output, int wi
 
                         for(int kernY = -kernelRadius; kernY <= kernelRadius; kernY++) {         // this iterates th
                                 for(int kernX = -kernelRadius; kernX <= kernelRadius; kernX++) {
-                                        // we're doing this, reusing edge pixel values, instead of padding,
+                                        // we're doing this, reusing edge pixel values, instead of padding
                                         // because we don't have to allocate more memory by adding padding this way.
 
                                         int pixelY = std::min(std::max(y + kernY, 0), height - 1);
@@ -74,6 +74,8 @@ void mcuConv::convolve(const unsigned char* input, unsigned char* output, int wi
                                         sumsX_G += input[pixelIndex + 1] * weightX;
                                         sumsX_R += input[pixelIndex + 2] * weightX;
 
+                                        // this is for outlines, when we have two kernel filters, usually to capture gradients or changes in axis.
+                                        // we have to compute these separately and combine via the Euclidean norm
                                         if (numKernels == 2 && kernelDataY) {
                                                 float weightY = kernelDataY[(kernY + kernelRadius) * kernelSize + (kernX + kernelRadius)];
                                                 sumsY_B += input[pixelIndex] * weightY;
@@ -82,14 +84,15 @@ void mcuConv::convolve(const unsigned char* input, unsigned char* output, int wi
                                         }
                                 }
                         }
-                        int outputIndex = (y * width + x) * 3;
+                        int outputIndex = (y * width + x) * 3; //pixel index we're setting
+
                         if (numKernels == 2) {
                                 // Combine results for edge detection
                                 output[outputIndex] = static_cast<unsigned char>(std::min(std::sqrt(sumsX_B * sumsX_B + sumsY_B * sumsY_B), 255.0f));
                                 output[outputIndex + 1] = static_cast<unsigned char>(std::min(std::sqrt(sumsX_G * sumsX_G + sumsY_G * sumsY_G), 255.0f));
                                 output[outputIndex + 2] = static_cast<unsigned char>(std::min(std::sqrt(sumsX_R * sumsX_R + sumsY_R * sumsY_R), 255.0f));
                         } else {
-                                // Use single kernel result for blurring
+                                // Use single kernel result for blurring / others
                                 output[outputIndex] = static_cast<unsigned char>(std::min(std::max(sumsX_B, 0.0f), 255.0f));
                                 output[outputIndex + 1] = static_cast<unsigned char>(std::min(std::max(sumsX_G, 0.0f), 255.0f));
                                 output[outputIndex + 2] = static_cast<unsigned char>(std::min(std::max(sumsX_R, 0.0f), 255.0f));
