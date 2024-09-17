@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 project(KANvoluCLion)
 
 # Specify the C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 set(OpenCV_DIR "P:/opencv/build/include")
 
@@ -17,7 +17,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 # Add your executable
 add_executable(KANvoluCLion main.cpp
         mcuConv.cpp
-        mcuConv.h)
+        mcuConv.hpp)
 
 # Link against OpenCV libraries
 target_link_libraries(KANvoluCLion ${OpenCV_LIBS})

@@ -50,7 +50,7 @@ cmake_ninja_workdir = P$:\Projects\STM32Projects\KANCNN\KANvoluCLion\cmake-build
 build cmake_object_order_depends_target_KANvoluCLion: phony || .
 
 build CMakeFiles\KANvoluCLion.dir\main.cpp.obj: CXX_COMPILER__KANvoluCLion_unscanned_Debug P$:\Projects\STM32Projects\KANCNN\KANvoluCLion\main.cpp || cmake_object_order_depends_target_KANvoluCLion
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -external:IP:\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\KANvoluCLion.dir
   OBJECT_FILE_DIR = CMakeFiles\KANvoluCLion.dir
@@ -58,7 +58,7 @@ build CMakeFiles\KANvoluCLion.dir\main.cpp.obj: CXX_COMPILER__KANvoluCLion_unsca
   TARGET_PDB = KANvoluCLion.pdb
 
 build CMakeFiles\KANvoluCLion.dir\mcuConv.cpp.obj: CXX_COMPILER__KANvoluCLion_unscanned_Debug P$:\Projects\STM32Projects\KANCNN\KANvoluCLion\mcuConv.cpp || cmake_object_order_depends_target_KANvoluCLion
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   INCLUDES = -external:IP:\opencv\build\include -external:W0
   OBJECT_DIR = CMakeFiles\KANvoluCLion.dir
   OBJECT_FILE_DIR = CMakeFiles\KANvoluCLion.dir

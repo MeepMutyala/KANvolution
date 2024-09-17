@@ -66,7 +66,7 @@ class mcuConv {
             }
         }
     };
-    void convolve(const unsigned char* input, unsigned char* output, int width, int height, const Kernel& kernel);
+    void convolve(const unsigned char* input, unsigned char* output, int width, int height, const Kernel& kernelX, const Kernel& kernelY, int numKernels, int stride);
 
 
 
