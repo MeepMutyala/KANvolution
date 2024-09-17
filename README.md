@@ -25,7 +25,7 @@ We're programming these optimized algorithms from scratch in C++. It's gonna be 
 
 ## 🚀 Current Status
 
-Currently, we're just implementing a basic blurring convolution operation with a non-learnable kernel. It's a small step, but an important foundation for what's to come!
+So far, we have a basic blurring convolution operation, a mixture of gradient convolutions (edge detection/outline drawing) with non-learnable kernels, and Direct Memory Access (DMA) simulated. Still have a ways to go, but these are important foundations for what's to come!
 
 ## 🔍 Current Focus
 
