@@ -1,0 +1,8 @@
+# ninja log v6
+2	2161	7482294392241313	CMakeFiles/KANvoluCLion.dir/main.cpp.obj	dd5aa46349c9eac
+2163	2787	7482294413853282	KANvoluCLion.exe	f70d5e2e854d8fb7
+20	118	7482357108478812	CMakeFiles/KANvoluCLion.dir/mcuConv.cpp.obj	6ba324b8756469ba
+3	2584	7482363186402619	CMakeFiles/KANvoluCLion.dir/main.cpp.obj	dd5aa46349c9eac
+2584	3107	7482363212213708	KANvoluCLion.exe	723f2e34ba524810
+2	1520	7482368594243459	CMakeFiles/KANvoluCLion.dir/main.cpp.obj	dd5aa46349c9eac
+1520	1861	7482368609423148	KANvoluCLion.exe	723f2e34ba524810

@@ -1,0 +1,3 @@
+P:/Projects/STM32Projects/KANCNN/KANvoluCLion/cmake-build-debug/CMakeFiles/KANvoluCLion.dir
+P:/Projects/STM32Projects/KANCNN/KANvoluCLion/cmake-build-debug/CMakeFiles/edit_cache.dir
+P:/Projects/STM32Projects/KANCNN/KANvoluCLion/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+#pragma code_page(65001)
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "P:/Projects/STM32Projects/KANCNN/KANvoluCLion/cmake-build-debug/CMakeFiles/KANvoluCLion.dir/embed.manifest"
